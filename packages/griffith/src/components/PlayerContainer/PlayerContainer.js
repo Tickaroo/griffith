@@ -27,6 +27,7 @@ const PlayerContainer = ({
   locale = 'en',
   autoplay,
   disablePictureInPicture,
+  disableFullscreen,
   defaultQuality,
 }) => (
   <ObjectFitProvider initialObjectFit={initialObjectFit}>
@@ -47,6 +48,7 @@ const PlayerContainer = ({
                       useMSE={useMSE}
                       autoplay={autoplay}
                       disablePictureInPicture={disablePictureInPicture}
+                      disableFullscreen={disableFullscreen}
                       standalone={standalone}
                       cover={cover}
                       title={title}
@@ -91,6 +93,8 @@ PlayerContainer.propTypes = {
   onBeforePlay: PropTypes.func,
   initialObjectFit: PropTypes.oneOf(VALID_FIT),
   useMSE: PropTypes.bool,
+  disablePictureInPicture: PropTypes.bool,
+  disableFullscreen: PropTypes.bool,
   defaultQuality: PropTypes.oneOf(['ld', 'sd', 'hd', 'fhd']),
 }
 

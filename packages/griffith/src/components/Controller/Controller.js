@@ -34,6 +34,7 @@ class Controller extends Component {
     onToggleFullScreen: PropTypes.func,
     show: PropTypes.bool,
     showPip: PropTypes.bool,
+    showFullscreen: PropTypes.bool,
     hiddenQualityMenu: PropTypes.bool,
     hiddenVolumeItem: PropTypes.bool,
   }
@@ -266,6 +267,7 @@ class Controller extends Component {
       onToggleFullScreen,
       onTogglePip,
       showPip,
+      showFullscreen,
       hiddenVolumeItem,
       hiddenQualityMenu,
     } = this.props
@@ -311,10 +313,12 @@ class Controller extends Component {
           />
         )}
         {showPip && <PipButtonItem isPip={isPip} onClick={onTogglePip} />}
-        <FullScreenButtonItem
-          isFullScreen={isFullScreen}
-          onClick={onToggleFullScreen}
-        />
+        {showFullscreen && (
+          <FullScreenButtonItem
+            isFullScreen={isFullScreen}
+            onClick={onToggleFullScreen}
+          />
+        )}
       </div>
     )
   }

@@ -27,6 +27,8 @@ interface PlayerContainerProps {
   initialObjectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
   useMSE?: boolean
   locale?: 'en' | 'ja' | 'zh-Hans' | 'zh-Hant'
+  disablePictureInPicture?: boolean
+  disableFullscreen?: boolean
   defaultQuality?: RealQuality[]
 }
 

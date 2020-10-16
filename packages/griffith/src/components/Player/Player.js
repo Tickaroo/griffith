@@ -35,6 +35,7 @@ class Player extends Component {
     onBeforePlay: PropTypes.func.isRequired,
     autoplay: PropTypes.bool,
     disablePictureInPicture: PropTypes.bool,
+    disableFullscreen: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -42,6 +43,7 @@ class Player extends Component {
     duration: 0,
     autoplay: false,
     disablePictureInPicture: false,
+    disableFullscreen: false,
   }
 
   state = {
@@ -371,6 +373,7 @@ class Player extends Component {
       onEvent,
       useMSE,
       disablePictureInPicture,
+      disableFullscreen,
     } = this.props
 
     const {
@@ -582,6 +585,7 @@ class Player extends Component {
                   onToggleFullScreen={this.handleToggleFullScreen}
                   onTogglePip={this.handleTogglePip}
                   show={showController}
+                  showFullscreen={!disableFullscreen}
                   showPip={Pip.supported && !disablePictureInPicture}
                 />
               </div>
